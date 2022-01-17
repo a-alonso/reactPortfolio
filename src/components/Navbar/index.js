@@ -1,14 +1,46 @@
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import { Navbar } from "react-bulma-components"
 import { useNavigate } from "react-router"
+import { Maybe } from "jazzi"
 import gcn from "getclassname"
+import data from "../../core/app-data"
+
+const buildItem = (onClick) => (acc,next) => {
+  const { 
+    group: prevGroup, 
+    components
+  } = acc
+
+  const hasDivider = prevGroup
+    .fmap(g => g !== next.group)
+    .onNone(() => false)
+  
+  const comp = <Fragment key={`${next.id}-fragment`}>
+    {hasDivider && <Navbar.Divider key={`${next.group}-divider`}/>}
+    <Navbar.Item key={next.id} onClick={() => onClick(next.path || next.id)}>
+      {next.linkText}
+    </Navbar.Item>
+  </Fragment>
+
+  return {
+    group: Maybe.fromFalsy(next.group),
+    components: [...components, comp]
+  }
+}
+
+const buildNavItems = (onClick) => {
+  return data.projects.reduce(buildItem(onClick), {
+    group: Maybe.None(),
+    components: []
+  }).components
+}
 
 const Nav = () => {
   const [isActive, setActive] = useState(false)
   const navigate = useNavigate()
 
-  const handleNavigateTo = (to) => () => {
-    navigate(`project/${to}`)
+  const handleNavigateTo = (to, exact=false) => {
+    exact ? navigate(to) : navigate(`/project/${to}`)
   }
 
   const handleBurger = () => {
@@ -19,13 +51,13 @@ const Nav = () => {
     "is-active": isActive
   })
 
-  return <Navbar trans role="navigation" aria-label="dropdown navigation">
+  return <Navbar transparent role="navigation" aria-label="dropdown navigation">
     <Navbar.Brand>
       <Navbar.Burger onClick={handleBurger} className={cl}/>
     </Navbar.Brand>
-    <Navbar.Menu id="navMenu" className={cl}>
+    <Navbar.Menu className={cl}>
       <Navbar.Container>
-        <Navbar.Item onClick={handleNavigateTo("..")}>
+        <Navbar.Item onClick={() => handleNavigateTo("/portfolio", true)}>
           Home
         </Navbar.Item>
         <Navbar.Item hoverable>
@@ -33,59 +65,34 @@ const Nav = () => {
             Work
           </Navbar.Link>
           <Navbar.Dropdown boxed>
-            <Navbar.Item onClick={handleNavigateTo("jpmc")}>
-              JP Morgan services documentation
-            </Navbar.Item>
-            <Navbar.Divider/>
-            <Navbar.Item onClick={handleNavigateTo("repay-consumer")}>
-              Repay consumer-facing
-            </Navbar.Item>
-            <Navbar.Item onClick={handleNavigateTo("repay-admin")}>
-              Repay admin-facing
-            </Navbar.Item>
-            <Navbar.Divider/>
-            <Navbar.Item onClick={handleNavigateTo("hogaru")}>
-              Hogaru.com
-            </Navbar.Item>
-            <Navbar.Divider/>
-            <Navbar.Item onClick={handleNavigateTo("nequi")}>
-              Nequi Neobank
-            </Navbar.Item>
-            <Navbar.Divider/>
-            <Navbar.Item onClick={handleNavigateTo("rappi")}>
-              Rappi
-            </Navbar.Item>
-            <Navbar.Divider/>
-            <Navbar.Item onClick={handleNavigateTo("endava")}>
-              Endava Ramp-Up Journal
-            </Navbar.Item>
+            {buildNavItems(handleNavigateTo)}
           </Navbar.Dropdown>
         </Navbar.Item>
       </Navbar.Container>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class=" button" 
+      <div className="navbar-end">
+        <div className="navbar-item">
+          <div className="field is-grouped">
+            <p className="control">
+              <a className=" button" 
                 data-social-network="Linkedin" 
                 data-social-target="https://www.linkedin.com/in/albertoalonsog/" 
                 target="_blank"  
                 rel="noreferrer"
                 href="https://www.linkedin.com/in/albertoalonsog/"
               >
-                <span class="icon">
-                  <i class="fa fa-linkedin"></i>
+                <span className="icon">
+                  <i className="fa fa-linkedin"></i>
                 </span>
                 <span>
                   Linkedin
                 </span>
               </a>
             </p>
-            <p class="control">
-              <a class="button" href="http://github.com/a-alonso" target="_blank" rel="noreferrer">
-                <span class="icon">
-                  <i class="fa fa-github"></i>
+            <p className="control">
+              <a className="button" href="http://github.com/a-alonso" target="_blank" rel="noreferrer">
+                <span className="icon">
+                  <i className="fa fa-github"></i>
                 </span>
                 <span>Github</span>
               </a>
@@ -95,6 +102,13 @@ const Nav = () => {
       </div>
     </Navbar.Menu>
   </Navbar>
+}
+
+Nav.Wrapper = ({ children }) => {
+  return <>
+    <Nav />
+    {children}
+  </>
 }
 
 export default Nav

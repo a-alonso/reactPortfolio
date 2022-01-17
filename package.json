@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.2.1",
     "bulma": "^0.9.3",
     "getclassname": "^2.1.2",
+    "jazzi": "^2.2.4",
     "react": "^17.0.2",
     "react-bulma-components": "4.0.7",
     "react-dom": "^17.0.2",

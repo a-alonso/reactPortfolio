@@ -4914,6 +4914,11 @@ jake@^10.6.1:
     filelist "^1.0.1"
     minimatch "^3.0.4"
 
+jazzi@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jazzi/-/jazzi-2.2.4.tgz#7868bb3335a714d759cd48b21dfa7e463ee23370"
+  integrity sha512-ZzJbOwnMtt8rc0oI/VTquoWm3IMxstDZ12FR/cT3BxBv9zlJurSeSiRmubLE037kaLaVFtpQgUg3E8lJaRiTkQ==
+
 jest-changed-files@^27.4.2:
   version "27.4.2"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-27.4.2.tgz#da2547ea47c6e6a5f6ed336151bd2075736eb4a5"
