@@ -1,14 +1,14 @@
 const EnadavaContent = () => <>
     <section className="hero is-medium is-dark is-bold">
         <div className="hero-body">
-        <div className="container">
-            <h1 className="title">
-            Endava Ramp Up Journal
-            </h1>
-            <h2 className="subtitle">
-            Onboarding tool for large companies | Endava
-            </h2>
-        </div>
+            <div className="container">
+                <h1 className="title">
+                Endava Ramp Up Journal
+                </h1>
+                <h2 className="subtitle">
+                Onboarding tool for large companies | Endava
+                </h2>
+            </div>
         </div>
     </section>
     <section id="Acquisition" className="section section-2">

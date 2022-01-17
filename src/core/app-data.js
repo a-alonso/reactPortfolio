@@ -113,7 +113,23 @@ const data = {
                     alt: "Endava",
                 }
             }
-        }
+        },
+        {
+            id: "nuevo",
+            group: "endava",
+            linkText: "Nuevo Ramp-Up Journal",
+            tabTitle: "Work: Nuevo",
+            card: {
+                display: true,
+                order: 100,
+                props: {
+                    title: "Nuevo Ramp-Up Journal",
+                    subtitle: "Onboarding tool for large companies | Endava",
+                    image: "assets/img/work_4.jpg",
+                    alt: "Endava",
+                }
+            }
+        },
     ]
 }
 
