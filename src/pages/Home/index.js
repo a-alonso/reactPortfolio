@@ -2,6 +2,7 @@ import { useNavigate } from "react-router"
 import Card from "../../components/Card"
 import Nav from "../../components/Navbar"
 import data from "../../core/app-data"
+import { useTitle } from "../../core/hooks"
 import { groupBy } from "../../core/utils"
 
 const Hero = () => <section id="about" className="hero is-light is-bold">
@@ -95,6 +96,7 @@ const Work = () => {
 }
 
 const Home = () => {
+    useTitle("Portfolio")
     return <>
         <Hero />
         <Work />

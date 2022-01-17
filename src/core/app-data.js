@@ -4,6 +4,7 @@ const data = {
             id: "jpmc",
             group: "jpmc",
             linkText: "JP Morgan services documentation",
+            tabTitle: "Work: JP Morgan Chase",
             card: {
                 display: true,
                 order: 0,
@@ -20,6 +21,7 @@ const data = {
             path: "repay-consumer",
             group: "repay",
             linkText: "Repay consumer-facing",
+            tabTitle: "Work: repay.com",
             card: {
                 display: true,
                 order: 2,
@@ -36,6 +38,7 @@ const data = {
             path: "repay-admin",
             group: "repay",
             linkText: "Repay admin-facing",
+            tabTitle: "Work: repay.com",
             card: {
                 display: true,
                 order: 1,
@@ -51,6 +54,7 @@ const data = {
             id: "hogaru",
             group: "hogaru",
             linkText: "Hogaru.com",
+            tabTitle: "Work: Hogaru.com",
             card: {
                 display: true,
                 order: 5,
@@ -66,6 +70,7 @@ const data = {
             id: "nequi",
             group: "nequi",
             linkText: "Nequi Neobank",
+            tabTitle: "Work: Nequi",
             card: {
                 display: false,
                 order: 6,
@@ -81,6 +86,7 @@ const data = {
             id: "rappi",
             group: "rappi",
             linkText: "Rappi",
+            tabTitle: "Work: Rappi",
             card: {
                 display: true,
                 order: 4,
@@ -96,6 +102,7 @@ const data = {
             id: "endava",
             group: "endava",
             linkText: "Endava Ramp-Up Journal",
+            tabTitle: "Work: Endava Ramp-Up Journal",
             card: {
                 display: true,
                 order: 3,
