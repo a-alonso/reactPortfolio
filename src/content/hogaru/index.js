@@ -113,6 +113,7 @@ const HogaruContent = () => {
                                 <h2 className="title is-2">Mobile ERP - Cleaners Operation Management</h2>
                                 <p className="subtitle is-5">Bot developed to manage cleaners daily processes <br /></p>
                                 <p className=''><span className='subtitle is-5'>The problem -</span> Company required a monthly 30% growth in its cleaners fleet, counting ~1200 cleaners by the end of 2017. Each cleaner on a succesful journey follows 4 mandatory steps per day:
+                                </p>
                                     <ol>
                                         <li>Confirm attendance to cleaning on the next day</li>
                                         <li>Confirm they are commuting to calculate ETA</li>
@@ -121,14 +122,14 @@ const HogaruContent = () => {
                                     </ol>
                                     However, mostly newcomers and cleaners having new clients had several operations issues such as getting lost finding an address or questioning how to clean something properly.
                                     The daily amount of processes is up to 2,700 per day, making unsustainable to build up a support team of 1 operator per 20 cleaners.
-                                </p>
+                                <p></p>
                                 <p className=''><span className='subtitle is-5'>The solution -</span>A mobile bot was embedded in their mobile app to simulate a chat with a virtual operator that replies immediatly to any requirement the cleaner has. Manual communication is held only when a situation requires attention
                                     <br />
                                     The virtual operator "Amanda" currently <strong> replies automatically to the 76% of conversations</strong> with cleaners and manages the daily operations with no hassle.
                                     A sandbox tool was deployed for the ops team to add or remove options the cleaners can choose when using the bot. Watch the news report about this ERP:
                                     <br />
                                 </p>
-                                <iframe title="youtubeHogaru" width="100%" height="315" src="https://www.youtube.com/embed/YeGhbdDIc9k?rel=0" frameborder="0" allowfullscreen></iframe>
+                                <iframe title="youtubeHogaru" width="100%" height="315" src="https://www.youtube.com/embed/YeGhbdDIc9k?rel=0" frameBorder="0" allowFullScreen></iframe>
                                 <p className=''><br /><span className='subtitle is-5'>The UX Approach -</span>The solution was conceived and refined by UX Research and prototyping using these qualitative and quantitative methods:
                                     <br />
                                 </p>
@@ -195,7 +196,7 @@ const HogaruContent = () => {
                                     <br />
                                 Wireframes and UI specs are confidential, however the decision tree can be checked here:
                                 </p>
-                                <iframe title="docsHogaru" src="https://docs.google.com/presentation/d/e/2PACX-1vQgavZ9SUdTe3cyK_dgPGrJf_fTBVVVnO6I2HxodJoNtx_Nje8QaoeMLArRNg3VM1f56Kt-vjhwjoa8/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                                <iframe title="docsHogaru" src="https://docs.google.com/presentation/d/e/2PACX-1vQgavZ9SUdTe3cyK_dgPGrJf_fTBVVVnO6I2HxodJoNtx_Nje8QaoeMLArRNg3VM1f56Kt-vjhwjoa8/embed?start=false&loop=false&delayms=3000" frameBorder="0" width="100%" height="569" allowFullScreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
                             </div>
                         </div>
                     </div>
